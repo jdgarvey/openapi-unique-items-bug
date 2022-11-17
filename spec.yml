@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: Test API
+  version: "1"
+paths:
+  /test:
+    get:
+      responses:
+        "200":
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/TestDto'
+components:
+  schemas:
+    TestDto:
+      required:
+        - a
+      type: object
+      properties:
+        a:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+
+        
