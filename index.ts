@@ -1,6 +1,8 @@
 import { TestDto } from "./output";
 
+const jsonApiResponse = {a: ['foo', 'bar']};
+const receivingVariable: TestDto = jsonApiResponse;
 // Results in error:
-// Type 'string[]' is missing the following properties from type 'Set<string>': add, clear, delete, has, and 2 more.ts(2740)
-// testDto.ts(15, 5): The expected type comes from property 'a' which is declared here on type 'TestDto'
-const testObject: TestDto = {a: ['foo', 'bar']};
+// Type '{ a: string[]; }' is not assignable to type 'TestDto'.
+//  Types of property 'a' are incompatible.
+//    Type 'string[]' is missing the following properties from type 'Set<string>': add, clear, delete, has, and 2 more.
